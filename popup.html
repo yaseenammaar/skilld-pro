@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bulma.css">
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #0c0c0c;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #0c0c0c;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0c0c0c;
+        }
+
+        body {
+            background-color: #333;
+            color:#AEE518;
+        }
+
+        .on {
+            display: none;
+        }
+
+        html {
+            /* background-color: #1da1f2; */
+        }
+
+        #comment,
+        #messenger,
+        #follow {
+            display: none;
+        }
+
+        .select,
+        select {
+            width: 100%;
+        }
+
+        .tag {
+            cursor: pointer;
+        }
+
+        img {
+            height: 50px;
+        }
+
+        .left-today {
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 6px;
+        }
+        .title{
+            color:#AEE518;
+        }
+        ul li{
+            color:#AEE518;
+        }
+        .tabs a{
+            color:#AEE518;
+        }
+        .tabs a:hover{
+            color:#AEE518;
+            border-bottom-color:#AEE518;
+        }
+        .tabs li.is-active a{
+            color:#AEE518;
+            border-bottom-color:#AEE518;
+        }
+        .tag:not(body).is-dark{
+            color:#AEE518;
+            background-color:#111;
+        }
+
+        .button.is-link.is-outlined{
+            color:#AEE518;
+            border-color:#AEE518;
+        }
+
+        .button.is-link.is-outlined:hover{
+            color:#000;
+            border-color:#AEE518;
+            background-color: #AEE518;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section">
+        <div class="has-text-centered">
+            <img src="icon.png" alt="">
+        </div>
+        <!-- <div class="title is-size-2 has-text-link has-text-centered">
+            tweetX
+        </div> -->
+        <div class="has-text-centered subtitle">
+            <div class="tag is-dark">PRO</div>
+        </div>
+        <div class="left-today">
+            <div class="has-text-centered mb-1">
+                <div class="is-small">
+                    Daily Limit
+                </div>
+            </div>
+            <nav class="level is-mobile">
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Follows</p>
+                        <p class="title is-size-5 follow-use">0/150</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Likes</p>
+                        <p class="title is-size-5 tweet-use">0/150</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Dms</p>
+                        <p class="title is-size-5 messages-use">0/150</p>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+
+        <div class="tabs is-centered">
+            <ul>
+                <li ref-tab="all" class="is-active" title="Follow, Like and DM"><a>All</a></li>
+                <li ref-tab="follow" title="Only Follow"><a>Follow</a></li>
+                <li ref-tab="comment" title="Only Like"><a>Like</a></li>
+                <li ref-tab="messenger" title="Only DM"><a>DM</a></li>
+            </ul>
+        </div>
+
+
+
+
+        <div id="all" class="tab-item">
+              <div class="select mt-3">
+                <select class="follow-select">
+                    <option value="30">30 people</option>
+                    <option value="80">80 people</option>
+                    <option value="150">150 people</option>
+                </select>
+
+            </div>
+             <div class="mt-3">
+                <input type="text" class="input follow-query-all" placeholder="Search User">
+            </div>
+             <div class="mt-3">
+                <input type="text" class="input msg-query" placeholder="DM Text">
+            </div>
+            
+
+            <div class="buttons mt-3 is-centered">
+                <button class="button is-link is-outlined all">
+                    Start All
+                </button>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div id="follow" class="tab-item">
+              <div class="select mt-3">
+                <select class="follow-select">
+                    <option value="30">30 people</option>
+                    <option value="80">80 people</option>
+                    <option value="150">150 people</option>
+                </select>
+
+            </div>
+             <div class="mt-3">
+                <input type="text" class="input follow-query" placeholder="Search User">
+            </div>
+            
+
+            <div class="buttons mt-3 is-centered">
+                <button class="button is-link is-outlined follow">
+                    Start Follow
+                </button>
+            </div>
+        </div>
+
+        <div id="comment" class="tab-item">
+            <div class="select mt-3">
+                <select class="comment-select">
+                    <option value="30">30 posts</option>
+                    <option value="80">80 posts</option>
+                    <option value="150">150 posts</option>
+                </select>
+            </div>
+            <div class="mt-3">
+                    <input type="text" class="input like-query" placeholder="Enter Username">
+                </div>
+                
+            <div class="buttons mt-3 is-centered">
+                <button class="button is-link is-outlined comment">
+                    Start Like
+                </button>
+            </div>
+        </div>
+
+        <div id="messenger" class="tab-item">
+
+            <!-- <div class="mt-3 has-text-centered"> -->
+                <!-- <input type="text" class="input dm-query" placeholder="Search User"> -->
+                <div class="select mt-3">
+                    <select class="dm-select">
+                        <option value="30">30 DM</option>
+                        <option value="80">80 DM</option>
+                        <option value="150">150 DM</option>
+                    </select>
+                </div>
+
+                <div class="mt-3">
+                    <input type="text" class="input dm-query" placeholder="Enter Username">
+                </div>
+                
+
+              
+                <!-- Sending to <span class="totalnum has-text-weight-bold">0</span> People -->
+            <!-- </div> -->
+            <textarea placeholder="Message here..." class="textarea messenger-text mt-3"></textarea>
+             <div class="buttons mt-3 is-centered">
+                <button id="msg" class="button is-link is-outlined">
+                    Start DM
+                </button>
+            </div>
+        </div>
+
+        <!-- <div class="buttons is-centered">
+            <div class="button follow">Follow</div>
+        </div>
+        <div class="buttons is-centered">
+            <div class="button comment">Comment & Follow</div>
+        </div>
+        <div class="buttons is-centered">
+            <div class="button messenger">Messenger</div>
+        </div> -->
+    </section>
+    <!-- <script src="popup.js"></script> -->
+
+   
+    <script src="keys.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="popup.js"></script>
+ 
+</body>
+
+</html>

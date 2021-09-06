@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bulma.css">
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: rgb(197, 228, 255);
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(168, 213, 252);
+        }
+
+        body {
+            background-color: aliceblue;
+        }
+
+        .on {
+            display: none;
+        }
+
+        html {
+            /* background-color: #1da1f2; */
+        }
+
+        #comment,
+        #messenger,#add {
+            display: none;
+        }
+
+        .select,
+        select {
+            width: 100%;
+        }
+
+        .tag {
+            cursor: pointer;
+        }
+
+        img {
+            height: 50px;
+        }
+
+        .left-today {
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section">
+        <div class="has-text-centered">
+            <img src="icon.png" alt="">
+        </div>
+        <!-- <div class="title is-size-2 has-text-link has-text-centered">
+            tweetX
+        </div> -->
+        <div class="has-text-centered subtitle">
+            <div class="tag is-dark">BASIC</div>
+        </div>
+        <div class="left-today">
+            <div class="has-text-centered mb-1">
+                <div class="is-small">
+                    Daily Limit
+                </div>
+            </div>
+            <nav class="level is-mobile">
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Follows</p>
+                        <p class="title is-size-5 follow-use">0/25</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Tweets</p>
+                        <p class="title is-size-5 tweet-use">25</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Messages</p>
+                        <p class="title is-size-5 messages-use">25</p>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="tabs is-centered">
+            <ul>
+                <li ref-tab="follow" class="is-active"><a>Follow</a></li>
+                <li ref-tab="comment"><a>Tweet</a></li>
+                <li ref-tab="messenger"><a>DM</a></li>
+            </ul>
+        </div>
+        <div id="follow" class="tab-item">
+            <input type="text" class="input follow-query" placeholder="search term">
+            <div class="select mt-3">
+                <select class="follow-select">
+                    <option value="25">25 people</option>
+                    <option value="50">50 people</option>
+                    <option value="100">100 people</option>
+                </select>
+            </div>
+
+            <div class="buttons mt-3 is-centered">
+                <button class="button is-link is-outlined follow">
+                    Start
+                </button>
+            </div>
+        </div>
+
+        <div id="comment" class="tab-item">
+            <input type="text" class="input comment-query" placeholder="search term">
+            <div class="select mt-3">
+                <select class="comment-select">
+                    <option value="25">25 people</option>
+                    <option value="50">50 people</option>
+                    <option value="100">100 people</option>
+                </select>
+            </div>
+            <textarea class="textarea mt-3 comment-text" placeholder="Comment here ..."></textarea>
+            <div class="buttons mt-3 is-centered">
+                <button class="button is-link is-outlined comment">
+                    Tweet
+                </button>
+            </div>
+        </div>
+
+        <div id="messenger" class="tab-item">
+            <label for="" class="label">Select people</label>
+            <div class="queries">
+
+            </div>
+            <div class="mt-3 has-text-centered">
+                Sending to <span class="totalnum has-text-weight-bold">0</span> People
+            </div>
+            <textarea placeholder="Message here..." class="textarea messenger-text mt-3"></textarea>
+            <!-- <div class="mt-3 has-text-centered">
+                <label class="checkbox">
+                    <input type="checkbox">
+                    Pin messaging
+                </label>
+            </div> -->
+            <div class="buttons is-centered">
+                <button class="button messenger is-link is-outlined mt-3">Send Message</button>
+            </div>
+        </div>
+
+        <!-- <div class="buttons is-centered">
+            <div class="button follow">Follow</div>
+        </div>
+        <div class="buttons is-centered">
+            <div class="button comment">Comment & Follow</div>
+        </div>
+        <div class="buttons is-centered">
+            <div class="button messenger">Messenger</div>
+        </div> -->
+    </section>
+    <!-- <script src="popup.js"></script> -->
+    <script src="keys.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>
